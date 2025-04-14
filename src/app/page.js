@@ -1,11 +1,21 @@
+"use client";
 import s from "./page.module.css";
+import { Typewriter } from "react-simple-typewriter";
 
 const page = () => {
   return (
     <div className={s.background}>
       <div className={s.container}>
         <h1 className={s.title}>
-          I came from another reality where code is a weapon.
+          <Typewriter
+            words={["I came from another reality where code is a weapon."]}
+            loop={1}
+            cursor
+            cursorStyle="|"
+            typeSpeed={70}
+            deleteSpeed={0}
+            delaySpeed={100}
+          />
         </h1>
         <p className={s.text}>
           &ldquo; I craft <span className={s.text_accent}>UI</span> like portals

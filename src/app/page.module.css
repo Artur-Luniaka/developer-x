@@ -30,11 +30,20 @@
   margin: 0 auto;
   margin-bottom: 30px;
   text-align: center;
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+  animation-delay: 0.3s;
 
   @media (min-width: 1024px) {
     font-size: 48px;
     width: 725px;
     margin-bottom: 36px;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
   }
 }
 
