@@ -6,6 +6,7 @@ import developer from "./assets/developer.json";
 import dynamic from "next/dynamic";
 import { useEffect } from "react";
 import { fairyDustCursor } from "cursor-effects";
+import Link from "next/link";
 
 const LottieWithNoSSR = dynamic(() => import("lottie-react"), { ssr: false });
 
@@ -46,7 +47,7 @@ const Page = () => {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 5, duration: 1, type: "spring" }}
         >
-          Enter the world
+          <Link href="/running" className={s.link}>Enter the world</Link>
         </motion.button>
         <motion.div
           className={s.icon}
