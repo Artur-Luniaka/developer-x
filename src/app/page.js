@@ -2,8 +2,10 @@
 import s from "./page.module.css";
 import { Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
-import Lottie from "lottie-react";
 import developer from "./assets/developer.json";
+import dynamic from "next/dynamic";
+
+const LottieWithNoSSR = dynamic(() => import("lottie-react"), { ssr: false });
 
 const page = () => {
   return (
@@ -44,7 +46,7 @@ const page = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 5.5, duration: 1 }}
         >
-          <Lottie animationData={developer} loop={true} />
+          <LottieWithNoSSR animationData={developer} loop={true} />
         </motion.div>
       </div>
     </div>
