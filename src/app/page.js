@@ -4,10 +4,18 @@ import { Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
 import developer from "./assets/developer.json";
 import dynamic from "next/dynamic";
+import { useEffect } from "react";
+import { fairyDustCursor } from "cursor-effects";
 
 const LottieWithNoSSR = dynamic(() => import("lottie-react"), { ssr: false });
 
-const page = () => {
+const Page = () => {
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      new fairyDustCursor({ color: "#e0f7fa" });
+    }
+  }, []);
+
   return (
     <div className={s.background}>
       <div className={s.container}>
@@ -53,4 +61,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
