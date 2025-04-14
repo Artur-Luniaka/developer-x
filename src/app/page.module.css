@@ -79,6 +79,13 @@
   justify-content: center;
   align-items: center;
 
+  box-shadow: 0 0 12px blueviolet;
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 0 20px 5px violet;
+  }
+
   @media (min-width: 1024px) {
     height: 55px;
     width: 230px;

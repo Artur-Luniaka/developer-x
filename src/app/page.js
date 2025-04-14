@@ -28,7 +28,14 @@ const page = () => {
           into a game world, where every detail is part of the experience.
           &rdquo;
         </motion.p>
-        <button className={s.btn}>Enter the world</button>
+        <motion.button
+          className={s.btn}
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ delay: 5, duration: 1, type: "spring" }}
+        >
+          Enter the world
+        </motion.button>
       </div>
     </div>
   );
