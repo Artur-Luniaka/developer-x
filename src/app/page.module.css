@@ -101,3 +101,14 @@
     max-width: 100%;
   }
 }
+
+.icon {
+  position: absolute;
+  width: 100px;
+  top: 5px;
+  right: 10px;
+
+  @media (min-width: 1024px) {
+    width: 150px;
+  }
+}

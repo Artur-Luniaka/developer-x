@@ -2,6 +2,8 @@
 import s from "./page.module.css";
 import { Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
+import Lottie from "lottie-react";
+import developer from "./assets/developer.json";
 
 const page = () => {
   return (
@@ -36,6 +38,14 @@ const page = () => {
         >
           Enter the world
         </motion.button>
+        <motion.div
+          className={s.icon}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 5.5, duration: 1 }}
+        >
+          <Lottie animationData={developer} loop={true} />
+        </motion.div>
       </div>
     </div>
   );
