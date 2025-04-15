@@ -1,6 +1,11 @@
 "use client";
 import s from "@/app/running/page.module.css";
 import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
+import { motion } from "framer-motion";
+import welcome from "../assets/welcome.json";
+
+const LottieWithNoSSR = dynamic(() => import("lottie-react"), { ssr: false });
 
 const Page = () => {
   const [seconds, setSeconds] = useState(5);
@@ -18,9 +23,23 @@ const Page = () => {
   }, [seconds]);
 
   return (
-    <div className={s.container}>
-      <h2 className={s.title}>Arrival via...{seconds}</h2>
-    </div>
+    <>
+      <div className={s.container}>
+        <h2 className={s.title}>Arrival via...{seconds}</h2>
+      </div>
+      {seconds === 0 && (
+        <div className={s.backdrop}>
+          <motion.div
+            className={s.icon}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 2 }}
+          >
+            <LottieWithNoSSR animationData={welcome} loop={false} />
+          </motion.div>
+        </div>
+      )}
+    </>
   );
 };
 
